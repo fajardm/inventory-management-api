@@ -43,6 +43,14 @@ func (res *SaleCreateService) CreateSale(dto *dto.SaleCreateDTO) *SaleCreateServ
 
 	created := db.Create(&sale)
 	if created.Error == nil {
+		product.Stock = product.Stock - sale.NumberShipped
+		updatedProduct := db.Save(&product)
+
+		if updatedProduct.Error != nil {
+			res.Error = updatedProduct.Error.Error()
+			return res
+		}
+
 		res.Sale = sale
 		return res
 	} else {
