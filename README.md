@@ -1,8 +1,8 @@
 # Table of Contents
-1. Quick Run
-2. Dockerized
-3. Run Test
-4. List of Endpoint
+1. [Quick Run](#quick-run)
+2. [Dockerized](#dockerized)
+3. [Run Test](#run-test)
+4. [List of Endpoint](#list-of-endpoint)
 
 ## Quick Run
 1. Run `./inventories`
