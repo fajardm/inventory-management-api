@@ -44,6 +44,10 @@ go get -u github.com/onsi/ginkgo/ginkgo
 
 ### Products
 
+***List Product***
+
+`GET localhost:3000/products`
+
 ***Create Product***
 
 `POST localhost:3000/products`
