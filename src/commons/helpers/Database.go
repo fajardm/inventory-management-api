@@ -7,9 +7,11 @@ import (
 
 var db *gorm.DB
 
+const DB_PATH = "./inventory.db"
+
 func SetDatabase() (*gorm.DB, error) {
 	var err error
-	db, err = gorm.Open("sqlite3", "../../../../inventory.db")
+	db, err = gorm.Open("sqlite3", DB_PATH)
 	return db, err
 }
 

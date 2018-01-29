@@ -25,8 +25,7 @@ var _ = Describe("Test ProductUpdateService", func() {
 	})
 
 	var _ = AfterEach(func() {
-		dbPath := "../../../../inventory.db"
-		os.Remove(dbPath)
+		os.Remove(helpers.DB_PATH)
 	})
 
 	Describe("Test func UpdateProduct", func() {

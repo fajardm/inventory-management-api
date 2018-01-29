@@ -30,8 +30,7 @@ var _ = Describe("Test Product Sale", func() {
 	})
 
 	var _ = AfterEach(func() {
-		dbPath := "../../../../inventory.db"
-		os.Remove(dbPath)
+		os.Remove(helpers.DB_PATH)
 	})
 
 	It("should return reports", func() {

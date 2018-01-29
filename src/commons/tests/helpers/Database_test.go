@@ -13,21 +13,14 @@ func TestInventories(t *testing.T) {
 	RunSpecs(t, "Database Test Suite")
 }
 
-var dbPath = "../../../../inventory.db"
-
-var _ = AfterSuite(func() {
-	os.Remove(dbPath)
-})
-
 var _ = Describe("Test Database", func() {
+	var _ = AfterEach(func() {
+		os.Remove(helpers.DB_PATH)
+	})
+
 	Describe("Test func SetDatabase()", func() {
 		It("should error nil", func() {
 			_, err := helpers.SetDatabase()
-			Expect(err).To(BeNil())
-		})
-
-		It("should error nil when open inventory.db", func() {
-			_, err := os.Open(dbPath)
 			Expect(err).To(BeNil())
 		})
 	})

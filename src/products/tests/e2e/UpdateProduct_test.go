@@ -12,6 +12,7 @@ import (
 	"bytes"
 	"github.com/fajardm/inventories/src/commons/helpers"
 	"github.com/fajardm/inventories/src/products/domain"
+	"os"
 )
 
 func TestUpdateProduct(t *testing.T) {
@@ -24,6 +25,10 @@ var _ = Describe("Test Update Product", func() {
 
 	var _ = BeforeEach(func() {
 		router = boot.SetupMain()
+	})
+
+	var _ = AfterEach(func() {
+		os.Remove(helpers.DB_PATH)
 	})
 
 	It("should return error validation with empty stock", func() {

@@ -10,6 +10,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"encoding/json"
 	"bytes"
+	"github.com/fajardm/inventories/src/commons/helpers"
+	"os"
 )
 
 func TestCreateProduct(t *testing.T) {
@@ -22,6 +24,10 @@ var _ = Describe("Test Create Product", func() {
 
 	var _ = BeforeEach(func() {
 		router = boot.SetupMain()
+	})
+
+	var _ = AfterEach(func() {
+		os.Remove(helpers.DB_PATH)
 	})
 
 	It("should return error validation with empty payload", func() {

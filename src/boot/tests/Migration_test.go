@@ -14,17 +14,15 @@ func TestInventories(t *testing.T) {
 	RunSpecs(t, "Migration Test Suite")
 }
 
-var _ = BeforeSuite(func() {
-	helpers.SetDatabase()
-})
-
-var dbPath = "../../../inventory.db"
-
-var _ = AfterSuite(func() {
-	os.Remove(dbPath)
-})
-
 var _ = Describe("Test Migration", func() {
+	var _ = BeforeEach(func() {
+		helpers.SetDatabase()
+	})
+
+	var _ = AfterEach(func() {
+		os.Remove(helpers.DB_PATH)
+	})
+
 	Describe("Test func Migration", func() {
 		It("should created table", func() {
 			db := helpers.GetDatabase()
