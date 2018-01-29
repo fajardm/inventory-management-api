@@ -22,10 +22,10 @@ func (res *PurchaseCreateService) CreatePurchase(dto *dto.PurchaseCreateDTO) *Pu
 	db := helpers.GetDatabase()
 
 	product := domain2.Product{}
-	result := db.Where("id = ?", dto.Product).First(&product)
+	result := db.Where("id = ?", dto.ProductId).First(&product)
 
 	if result.RecordNotFound() {
-		res.EntityErrorMessage = "Product with id: " + dto.Product + " not found"
+		res.EntityErrorMessage = "Product with id: " + dto.ProductId + " not found"
 		return res
 	} else if result.Error != nil {
 		res.Error = result.Error.Error()
@@ -39,10 +39,10 @@ func (res *PurchaseCreateService) CreatePurchase(dto *dto.PurchaseCreateDTO) *Pu
 		TotalPrice:     dto.TotalPrice,
 		Note:           dto.Note,
 		Receipt:        dto.Receipt,
-		Product:        product,
+		ProductId:      product.ID,
 	}
 
-	created := db.Create(&product)
+	created := db.Create(&purchase)
 	if created.Error == nil {
 		res.Purchase = purchase
 		return res

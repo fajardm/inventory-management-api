@@ -100,6 +100,8 @@ Request Example
 }
 ```
 
+### Sales
+
 ***Create Sales***
 
 `POST localhost:3000/sales`
@@ -115,3 +117,13 @@ Request Example
 	"product": "e2410203-9869-4c5d-bf5a-e42a06fdbe9e"
 }
 ```
+
+### Reports
+
+***Laporan Nilai Barang***
+
+`GET localhost:3000/reports/product_values`
+
+***Laporan Penjualan***
+
+`GET localhost:3000/reports/product_sales`

@@ -7,5 +7,5 @@ type PurchaseCreateDTO struct {
 	TotalPrice     float32 `form:"TotalPrice" json:"TotalPrice" validate:"gte=0,required"`
 	Receipt        string  `form:"Receipt" json:"Receipt"`
 	Note           string  `form:"Note" json:"Note"`
-	Product        string  `form:"Product" json:"Product" validate:"required"`
+	ProductId      string  `form:"ProductId" json:"ProductId" validate:"required"`
 }

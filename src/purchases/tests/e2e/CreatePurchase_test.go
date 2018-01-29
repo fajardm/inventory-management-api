@@ -50,7 +50,7 @@ var _ = Describe("Test Create Purchase", func() {
 			"Price":          1,
 			"TotalPrice":     1,
 			"Note":           "note",
-			"Product":        "1",
+			"ProductId":      "1",
 		}
 		body, _ := json.Marshal(payload)
 
@@ -72,7 +72,7 @@ var _ = Describe("Test Create Purchase", func() {
 			"Price":          1,
 			"TotalPrice":     1,
 			"Note":           "note",
-			"Product":        product.ID,
+			"ProductId":      product.ID,
 		}
 		body, _ := json.Marshal(payload)
 
