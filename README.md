@@ -42,6 +42,12 @@ go get -u github.com/onsi/ginkgo/ginkgo
 
 ## List of Endpoint
 
+Request Header 
+
+```
+Content-Type: application/json
+```
+
 ### Products
 
 ***List Product***
@@ -85,6 +91,10 @@ Request Example
 `DELETE localhost:3000/products/:id`
 
 ### Purchases
+
+***List Purchases***
+
+`GET localhost:3000/purchases`
 
 ***Create Purchase***
 

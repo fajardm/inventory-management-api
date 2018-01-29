@@ -8,6 +8,6 @@ import (
 func PurchaseRoutes() {
 	router := helpers.GetRouter()
 
-	//router.GET("/products", controllers.ListProduct)
+	router.GET("/purchases", controllers.ListPurchases)
 	router.POST("/purchases", controllers.CreatePurchase)
 }
