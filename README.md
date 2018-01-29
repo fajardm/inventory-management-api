@@ -116,6 +116,10 @@ Request Example
 
 ### Sales
 
+***List Sales***
+
+`GET localhost:3000/sales`
+
 ***Create Sales***
 
 `POST localhost:3000/sales`
