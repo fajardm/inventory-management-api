@@ -44,6 +44,14 @@ func (res *PurchaseCreateService) CreatePurchase(dto *dto.PurchaseCreateDTO) *Pu
 
 	created := db.Create(&purchase)
 	if created.Error == nil {
+		product.Stock = purchase.OrderQuantity + product.Stock
+		updatedProduct := db.Save(&product)
+
+		if updatedProduct.Error != nil {
+			res.Error = updatedProduct.Error.Error()
+			return res
+		}
+
 		res.Purchase = purchase
 		return res
 	} else {
