@@ -31,7 +31,7 @@ var _ = Describe("Test TestSaleCreateDTO", func() {
 			Price:         1,
 			TotalPrice:    1,
 			Note:          "note",
-			Product:       "108291289",
+			ProductId:     "108291289",
 		}
 		err := helpers.GetValidator().Struct(dto)
 

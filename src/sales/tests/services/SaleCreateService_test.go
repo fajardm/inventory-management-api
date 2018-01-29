@@ -46,7 +46,7 @@ var _ = Describe("Test SaleCreateService", func() {
 				Price:         1,
 				TotalPrice:    1,
 				Note:          "note",
-				Product:       "1",
+				ProductId:     "1",
 			}
 
 			service := services.SaleCreateService{}
@@ -66,7 +66,7 @@ var _ = Describe("Test SaleCreateService", func() {
 				Price:         1,
 				TotalPrice:    1,
 				Note:          "note",
-				Product:       product.ID,
+				ProductId:     product.ID,
 			}
 
 			service := services.SaleCreateService{}

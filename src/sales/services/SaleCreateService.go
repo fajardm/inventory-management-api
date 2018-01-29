@@ -23,10 +23,10 @@ func (res *SaleCreateService) CreateSale(dto *dto.SaleCreateDTO) *SaleCreateServ
 	}
 
 	product := domain2.Product{}
-	result := db.Where("id = ?", dto.Product).First(&product)
+	result := db.Where("id = ?", dto.ProductId).First(&product)
 
 	if result.RecordNotFound() {
-		res.EntityErrorMessage = "Product with id: " + dto.Product + " not found"
+		res.EntityErrorMessage = "Product with id: " + dto.ProductId + " not found"
 		return res
 	} else if result.Error != nil {
 		res.Error = result.Error.Error()
@@ -38,10 +38,10 @@ func (res *SaleCreateService) CreateSale(dto *dto.SaleCreateDTO) *SaleCreateServ
 		Price:         dto.Price,
 		TotalPrice:    dto.TotalPrice,
 		Note:          dto.Note,
-		Product:       product,
+		ProductId:     product.ID,
 	}
 
-	created := db.Create(&product)
+	created := db.Create(&sale)
 	if created.Error == nil {
 		res.Sale = sale
 		return res

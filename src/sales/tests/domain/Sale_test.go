@@ -5,7 +5,6 @@ import (
 	. "github.com/onsi/gomega"
 	"testing"
 	"github.com/fajardm/inventories/src/sales/domain"
-	domain2 "github.com/fajardm/inventories/src/products/domain"
 )
 
 func TestSales(t *testing.T) {
@@ -21,7 +20,7 @@ var _ = Describe("Test Sales", func() {
 				Price:         1,
 				TotalPrice:    1,
 				Note:          "note",
-				Product:       domain2.Product{SKU: "SKU", Stock: 0},
+				ProductId:     "1",
 			}
 
 			Expect(model.NumberShipped).To(Equal(1))
