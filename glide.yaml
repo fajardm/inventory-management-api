@@ -1,0 +1,18 @@
+package: github.com/fajardm/inventories
+import:
+- package: github.com/google/uuid
+  version: "0.2"
+- package: github.com/gin-gonic/gin
+  version: v1.2
+- package: github.com/asaskevich/govalidator
+  version: v8
+- package: github.com/jinzhu/gorm
+  version: v1.0
+- package: github.com/onsi/ginkgo
+  version: v1.4.0
+  subpackages:
+  - ginkgo
+- package: github.com/onsi/gomega
+  version: v1.3.0
+- package: gopkg.in/go-playground/validator.v9
+  version: v9.9.3
