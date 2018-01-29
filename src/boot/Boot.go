@@ -22,5 +22,11 @@ func SetupMain() *gin.Engine {
 	sales.SaleRoutes()
 	reports.ReportRoutes()
 
+	router.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
+
 	return router
 }

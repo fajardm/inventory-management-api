@@ -6,7 +6,8 @@
 
 ## Quick Run
 1. Run `./inventories`
-2. You can rebuild Binary `go build`
+2. Open `localhost:3000/ping`
+3. You can rebuild Binary `go build`
 
 ## Dockerized
 **Build Docker**
