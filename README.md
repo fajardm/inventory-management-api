@@ -96,7 +96,7 @@ Request Example
 	"totalprice": 100000,
 	"receipt": "hilang",
 	"note": "2018/01/06 terima 10",
-	"product": "e2410203-9869-4c5d-bf5a-e42a06fdbe9e"
+	"productid": "e2410203-9869-4c5d-bf5a-e42a06fdbe9e"
 }
 ```
 
@@ -114,7 +114,7 @@ Request Example
 	"price": 10000,
 	"totalprice": 100000,
 	"note": "Pesanan ID 9220020",
-	"product": "e2410203-9869-4c5d-bf5a-e42a06fdbe9e"
+	"productid": "e2410203-9869-4c5d-bf5a-e42a06fdbe9e"
 }
 ```
 
